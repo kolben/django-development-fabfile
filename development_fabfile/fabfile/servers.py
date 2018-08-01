@@ -17,6 +17,8 @@ def common_conf():
     env.port = '22'
     env.pg_admin_role = 'postgres'
     env.venv_name = settings.VENV_NAME
+    env.venv_type = getattr(settings, 'VENV_TYPE', 'VIRTUALENV')
+    env.venv_path = getattr(settings, 'VENV_PATH', None)
 common_conf()
 
 
