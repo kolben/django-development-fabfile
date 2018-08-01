@@ -35,5 +35,5 @@ def run_workon(command):
     """
     env.shell = "/bin/bash -l -i -c"
     if env.venv_type == 'VENV':
-        return run('source {0}{1} && {2}'.format(env.venv_path, env.venv_name, command))
+        return run('source {0}{1}/bin/activate && {2}'.format(env.venv_path, env.venv_name, command))
     return run('workon {0} && {1}'.format(env.venv_name, command))
